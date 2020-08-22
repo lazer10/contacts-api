@@ -24,6 +24,14 @@ class ContactService {
       throw error;
     }
   }
+
+  static async updateContact(filter, update) {
+    try {
+      return await Contact.findOneAndUpdate(filter, update);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default ContactService;
