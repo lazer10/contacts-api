@@ -8,6 +8,14 @@ class ContactService {
       throw error;
     }
   }
+
+  static async getAllContacts() {
+    try {
+      return await Contact.find();
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default ContactService;

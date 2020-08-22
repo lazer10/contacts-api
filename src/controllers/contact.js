@@ -10,6 +10,15 @@ class ContactController {
       return out(res, 500, error.message || error, null, 'SERVER_ERROR');
     }
   }
+
+  static async getAllContacts(req, res) {
+    try {
+      const contacts = await ContactService.getAllContacts();
+      return out(res, 200, 'Contacts Added', contacts);
+    } catch (error) {
+      return out(res, 500, error.message || error, null, 'SERVER_ERROR');
+    }
+  }
 }
 
 export default ContactController;
