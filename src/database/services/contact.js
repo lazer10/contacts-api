@@ -16,6 +16,14 @@ class ContactService {
       throw error;
     }
   }
+
+  static async getSingleContact(params) {
+    try {
+      return await Contact.findOne(params);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default ContactService;
