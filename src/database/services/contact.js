@@ -32,6 +32,14 @@ class ContactService {
       throw error;
     }
   }
+
+  static async deleteContact(params) {
+    try {
+      return await Contact.deleteOne(params);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export default ContactService;
