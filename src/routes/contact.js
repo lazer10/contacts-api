@@ -8,4 +8,6 @@ router.get('/:id', Controller.getSingleContact);
 
 router.post('/new', Controller.addContact);
 
+router.put('/:id', Controller.updateContact);
+
 export default router;
