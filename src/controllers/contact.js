@@ -19,6 +19,16 @@ class ContactController {
       return out(res, 500, error.message || error, null, 'SERVER_ERROR');
     }
   }
+
+  static async getSingleContact(req, res) {
+    try {
+      const { id } = req.params;
+      const contact = await ContactService.getSingleContact({ _id: id });
+      return out(res, 200, 'Contacts Added', contact);
+    } catch (error) {
+      return out(res, 500, error.message || error, null, 'SERVER_ERROR');
+    }
+  }
 }
 
 export default ContactController;
