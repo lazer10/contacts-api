@@ -26,7 +26,7 @@ class ContactController {
       const { id } = req.params;
       const contact = await ContactService.getSingleContact({ _id: id });
       if (!contact) return out(res, 404, 'No Contact found', null, 'NOT_FOUND');
-      return out(res, 200, 'Contacts', contact);
+      return out(res, 200, 'Contact', contact);
     } catch (error) {
       return out(res, 500, error.message || error, null, 'SERVER_ERROR');
     }
