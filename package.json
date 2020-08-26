@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node ./src/dist/index.js",
+    "build": "rm -rf ./src/dist && babel ./src/. --out-dir ./src/dist --copy-files",
     "dev": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
