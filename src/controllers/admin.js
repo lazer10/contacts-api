@@ -7,7 +7,7 @@ class adminController {
     const { username, password } = req.body;
     if (username !== config.ADMIN_USERNAME || password !== config.ADMIN_PASSWORD) return out(res, 400, 'Username or Password is incorrect', null, 'AUTHENTICATION_ERROR');
     const token = await sign({ username, password, role: 'admin' });
-    return out(res, 200, 'Loggedd in successfully', { username, role: 'admin', token });
+    return out(res, 200, 'Logged in successfully', { username, role: 'admin', token });
   }
 }
 
