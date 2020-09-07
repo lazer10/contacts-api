@@ -8,7 +8,7 @@ const router = Router();
 router.get('/', Controller.getAllContacts);
 router.get('/:id', Controller.getSingleContact);
 
-router.post('/new', Validations.addContact, Controller.addContact);
+router.post('/new', Authorization.isAdmin, Validations.addContact, Controller.addContact);
 
 router.put('/:id', Authorization.isAdmin, Controller.updateContact);
 
