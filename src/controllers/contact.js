@@ -4,6 +4,10 @@ import out from '../helpers/response';
 class ContactController {
   static async addContact(req, res) {
     try {
+      // eslint-disable-next-line camelcase
+      const { phone_number } = req.body;
+      const contactExist = await ContactService.getSingleContact({ phone_number });
+      if (contactExist) return out(res, 409, 'That number already saved', null, 'CONFLICT ERROR');
       const newContact = await ContactService.addContact(req.body);
       return out(res, 201, 'Contact Added', newContact);
     } catch (error) {
